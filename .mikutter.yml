@@ -1,0 +1,11 @@
+---
+slug: :mikutter-osc-kansai-2014
+depends:
+  mikutter: 3.0.3
+  plugin:
+  - gui
+  - gtk
+version: '1.0'
+author: 
+name: mikutter osc kansai support 2014
+description: OS kansai 2014のセミナースケジュールを表示するだけだと思った？
