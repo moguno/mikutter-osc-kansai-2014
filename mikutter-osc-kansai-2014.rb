@@ -280,8 +280,11 @@ Plugin.create(:mikutter_osc) {
 
 
   command(:favxxx, name: "???", condition: lambda { |opt| true }, visible: true, icon: Skin.get("icon.png"), role: :window) { |opt|
-    if Time.now > Time.parse("14/8/2 00:00")
+    if Time.now > Time.parse("14/8/2 10:00")
+      timeline(:home_timeline) << Message.new(:message => "さぁ、としぁさんを応援しよーーー！", :system => true)
       Gdk::SubPartsFavToshi_a.regist
+    else
+      timeline(:home_timeline) << Message.new(:message => "もうちょっと待ってね♪", :system => true)
     end
   }
 }
