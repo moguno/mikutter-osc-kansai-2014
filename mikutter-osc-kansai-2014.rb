@@ -180,7 +180,7 @@ Plugin.create(:mikutter_osc) {
       Reserver.new(3) {
         Delayer.new {
           msg = [
-            "こんな感じで15分前に次のセミナーをお知らせするね。",
+            "こんな感じで開始15分前に次のセミナーをお知らせするね。",
             "",
             "情報は7/31時点のものだから、会場の最新情報も必ずチェックしてね。",
           ]
@@ -209,15 +209,10 @@ Plugin.create(:mikutter_osc) {
 
 
   class Gdk::SubPartsFavToshi_a < Gdk::SubParts
-    regist
-
-    TIME_START = Time.parse("14/08/02 00:00:00")
-    TIME_FINISH = Time.parse("14/08/02 14:00:00")
+    #regist
 
     def is_toshi_a?(message)
-      (TIME_START < Time.now) &&
-      (TIME_FINISH > Time.now) &&
-        (message[:user][:screen_name] == "toshi_a")
+      message[:user][:screen_name] == "toshi_a"
     end
 
     def height
