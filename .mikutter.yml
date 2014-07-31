@@ -5,7 +5,7 @@ depends:
   plugin:
   - gui
   - gtk
-version: '0.0.3'
+version: '0.0.4'
 author: 
 name: mikutter osc kansai support 2014
 description: OS kansai 2014のセミナースケジュールを表示するだけだと思った？
