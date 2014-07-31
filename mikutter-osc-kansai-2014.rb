@@ -277,5 +277,12 @@ Plugin.create(:mikutter_osc) {
       end
     end
   end
+
+
+  command(:favxxx, name: "???", condition: lambda { |opt| true }, visible: true, icon: Skin.get("icon.png"), role: :window) { |opt|
+    if Time.now > Time.parse("14/8/2 00:00")
+      Gdk::SubPartsFavToshi_a.regist
+    end
+  }
 }
 
