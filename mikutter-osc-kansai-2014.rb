@@ -208,6 +208,21 @@ Plugin.create(:mikutter_osc) {
   }
 
 
+  command(:notify_seminor, name: "次のセミナーは？", condition: lambda { |opt| true }, visible: true, icon: Skin.get("post.png"), role: :window) { |opt|
+    next_seminor_time = get_next_seminor_time(Time.now)
+
+    seminors = SEMINORS.select { |sem|
+      sem.time == next_seminor_time
+    }
+
+    if seminors
+      msg = make_msg_array(next_seminor_time, seminors)
+
+      timeline(:home_timeline) << Message.new(:message => msg.join("\n"), :system => true)
+    end
+  }
+
+
   class Gdk::SubPartsFavToshi_a < Gdk::SubParts
     #regist
 
