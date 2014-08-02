@@ -182,10 +182,31 @@ Plugin.create(:mikutter_osc) {
           msg = [
             "こんな感じで開始15分前に次のセミナーをお知らせするね。",
             "",
+            "ウインドウ下部のメガホンボタンを押してくれてもOKだよ。",
+            "",
             "情報は7/31時点のものだから、会場の最新情報も必ずチェックしてね。",
+            "",
           ]
 
           timeline(:home_timeline) << Message.new(:message => msg.join("\n"), :system => true)
+
+          Reserver.new(8) {
+            Delayer.new {
+              msg = [
+                "そうそう、ウインドウ下部の私のマークのボタンを押すと、",
+                "",
+                "@toshi_aさんを",
+                "",
+                "すごく",
+                "",
+                "ふぁぼりやすくなるよ。",
+                "",
+                "それでは、OSC kansai@Kyoto 2014楽しみましょー！"
+              ]
+
+              timeline(:home_timeline) << Message.new(:message => msg.join("\n"), :system => true)
+            }
+          }
         }
       }
 
